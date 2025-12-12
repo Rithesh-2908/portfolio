@@ -1,0 +1,567 @@
+/* ============================
+   GLOBAL THEME VARIABLES
+============================ */
+:root {
+  --cream-1: #f8f4ee;
+  --cream-2: #fbefe2;
+  --accent: #ff8a42;
+  --accent-deep: #ff6a1a;
+  --muted: #57483e;
+  --glass: rgba(255, 255, 255, 0.72);
+
+  --radius: 14px;
+  --container: 1080px;
+
+  --soft-shadow: 0 8px 24px rgba(87, 72, 62, 0.08);
+  --pastel-shadow: 0 12px 28px rgba(255, 138, 66, 0.12);
+
+  --fs-xl: 42px;
+  --fs-lg: 24px;
+  --fs-md: 18px;
+  --fs-sm: 15px;
+
+  font-family: "Poppins", "Montserrat", system-ui;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(var(--cream-1), var(--cream-2));
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 10% 20%, rgba(255,160,110,0.07), transparent);
+  background-size: 26px 26px, 26px 26px, cover;
+  color: var(--muted);
+  font-size: var(--fs-md);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: var(--container);
+  margin: auto;
+  padding: 20px;
+}
+
+
+/* ============================
+   NAVIGATION BAR
+============================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: var(--muted);
+}
+
+/* NAV LIST */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  padding: 10px 14px;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  border-radius: 10px;
+  transition: 0.25s;
+}
+
+.nav a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pastel-shadow);
+}
+
+.resume-btn {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: 0;
+}
+
+.hamburger .bar {
+  width: 26px;
+  height: 3px;
+  background: var(--muted);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+
+/* ============================
+   HERO SECTION
+============================ */
+.hero {
+  padding: 30px 0 10px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 36px;
+  align-items: center;
+}
+
+#typewriter {
+  font-size: var(--fs-xl);
+  font-weight: 900;
+  color: #3b3028;
+  margin: 0 0 6px;
+  border-right: 3px solid var(--accent);
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+  0% {border-color: transparent;}
+  50% {border-color: var(--accent);}
+  100% {border-color: transparent;}
+}
+
+.dynamic-role {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  margin: 4px 0 14px;
+  color: #6a5b50;
+}
+
+.cta-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  background: linear-gradient(90deg, var(--accent), #ffb784);
+  padding: 12px 16px;
+  border-radius: 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--fs-md);
+  transition: 0.25s;
+  box-shadow: var(--pastel-shadow);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid rgba(0,0,0,0.15);
+  color: var(--muted);
+}
+
+/* HERO IMAGE */
+.profile-box {
+  width: 100%;
+  height: 420px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--soft-shadow);
+}
+
+.profile-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SOFT BLOBS */
+.blobs { position: relative; }
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(28px);
+}
+.b1 { width: 150px; height: 150px; background: rgba(255,140,70,0.12); top: -30px; right: -40px; }
+.b2 { width: 110px; height: 110px; background: rgba(255,180,120,0.12); top: 90px; right: -10px; }
+
+
+/* ============================
+   SECTIONS
+============================ */
+.section {
+  padding: 28px 0; /* MUCH LESSER GAP */
+}
+
+.section-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 14px;
+  color: #3b3028;
+}
+
+.glass {
+  background: var(--glass);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--soft-shadow);
+}
+
+/* ============================
+   EDUCATION (equal cards)
+============================ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 14px;
+}
+
+.edu-card {
+  background: var(--glass);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: var(--soft-shadow);
+}
+
+.edu-card h3 {
+  margin: 0 0 4px;
+  color: var(--accent-deep);
+}
+
+.edu-card h4 {
+  margin: 0 0 6px;
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+/* ============================
+   INTERNSHIPS
+============================ */
+.intern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 14px;
+}
+
+.intern-card {
+  padding: 18px;
+  border-radius: 14px;
+  min-height: 130px;
+  background: var(--glass);
+  text-align: left;
+}
+
+/* ============================
+   SKILLS GRID
+============================ */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.skill-card {
+  background: white;
+  padding: 16px;
+  text-align: center;
+  font-weight: 700;
+  color: #4b3a33;
+  border-radius: 14px;
+  box-shadow: var(--soft-shadow);
+  transition: 0.25s;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pastel-shadow);
+}
+
+/* ============================
+   CERTIFICATIONS GRID
+============================ */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 14px;
+}
+
+.cert-card {
+  padding: 18px;
+  background: var(--glass);
+  border-radius: 14px;
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 0.5s;
+}
+
+.cert-card.visible {
+  opacity: 1;
+  transform: none;
+  box-shadow: var(--pastel-shadow);
+}
+
+/* ============================
+   PROJECTS GRID
+============================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 14px;
+}
+
+.project-card {
+  padding: 18px;
+  background: var(--glass);
+  border-radius: 14px;
+  transition: 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pastel-shadow);
+}
+
+/* ============================
+   CONTACT BOX
+============================ */
+.contact-only {
+  padding: 18px;
+  font-size: var(--fs-md);
+}
+
+.contact-only p {
+  margin: 6px 0;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.site-footer {
+  text-align: center;
+  padding: 20px 0;
+  color: rgba(0,0,0,0.6);
+  font-size: var(--fs-sm);
+}
+
+/* ============================
+   APPEAR ANIMATION
+============================ */
+.appear-up {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 0.6s;
+}
+
+.appear-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================
+   RESPONSIVE FIXES
+============================ */
+@media (max-width: 850px) {
+  .nav { display: none; }
+  .hamburger { display: block; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .profile-box { height: 330px; }
+}
+/* ============================
+   INTERNSHIP — VERTICAL LIST
+============================ */
+
+.intern-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Row layout */
+.intern-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  transition: 0.35s ease;
+}
+
+/* Hover effect */
+.intern-row:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--pastel-shadow);
+}
+
+/* Logo box */
+.intern-logo {
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--soft-shadow);
+  flex-shrink: 0;
+}
+
+/* Logo image */
+.intern-logo img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* Content */
+.intern-content h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #3b3028;
+}
+
+.intern-role {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-deep);
+  margin-bottom: 6px;
+}
+
+.intern-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ============================
+   MOBILE FIX
+============================ */
+@media (max-width: 600px) {
+  .intern-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intern-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
+/* ============================
+   PROJECTS — FLIP CARDS
+============================ */
+
+.project-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* Card wrapper */
+.project-flip-card {
+  height: 260px;
+  perspective: 1200px;
+}
+
+/* Inner */
+.project-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+}
+
+/* Hover flip */
+.project-flip-card:hover .project-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back common */
+.project-front,
+.project-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: var(--soft-shadow);
+}
+
+/* FRONT */
+.project-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Title overlay */
+.project-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  font-weight: 800;
+  font-size: 16px;
+  color: rgb(184, 65, 14);
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+}
+
+/* BACK */
+.project-back {
+  background: var(--glass);
+  transform: rotateY(180deg);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-back h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #3b3028;
+}
+
+.project-back p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Mobile tap-friendly */
+@media (max-width: 600px) {
+  .project-flip-card {
+    height: 240px;
+  }
+}
